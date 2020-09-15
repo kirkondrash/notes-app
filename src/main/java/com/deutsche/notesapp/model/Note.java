@@ -22,6 +22,6 @@ public class Note {
     @Lob
     private String content;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private Theme theme;
 }
