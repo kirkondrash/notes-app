@@ -30,7 +30,7 @@ public class NoteViewController {
 
     @GetMapping("/{id}")
     public String viewNote(@PathVariable("id") Long id, Model model) {
-        noteViewService.fillModelWIthNodeById(id, model);
+        noteViewService.fillModelWithNoteById(id, model);
         return "view-note";
     }
 
@@ -50,7 +50,7 @@ public class NoteViewController {
 
     @GetMapping("/edit_note/{id}")
     public String showEditNoteForm(@PathVariable("id") long id, Model model) {
-        noteViewService.fillModelWIthNodeById(id, model);
+        noteViewService.fillModelWithNoteById(id, model);
         return "edit-note";
     }
 

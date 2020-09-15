@@ -1,6 +1,6 @@
 package com.deutsche.notesapp.service;
 
-import com.deutsche.benchmarktools.annotations.Benchmark;
+import com.deutsche.benchmarkstarter.annotations.Benchmark;
 import com.deutsche.notesapp.dao.NotesRepo;
 import com.deutsche.notesapp.dao.ThemesRepo;
 import com.deutsche.notesapp.model.Note;
@@ -36,7 +36,7 @@ public class NoteViewService {
             throw new RuntimeException("HELLYEAH");
     }
 
-    public void fillModelWIthNodeById(Long id, Model model) {
+    public void fillModelWithNoteById(Long id, Model model) {
         Note note = notesRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid note Id:" + id));
         model.addAttribute("note", note);
     }
