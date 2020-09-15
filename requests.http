@@ -1,0 +1,21 @@
+###
+
+POST localhost:8080/api/notes
+Content-Type: application/json
+
+{
+  "title": "hello there",
+  "content": "General Kenobi",
+  "theme": "starwars"
+}
+
+###
+
+GET http://localhost:8080/api/notes/search/byTheme?theme=starwars
+
+###
+
+GET http://localhost:8080/api/notes/1
+
+###
+
