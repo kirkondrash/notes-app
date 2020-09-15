@@ -1,6 +1,6 @@
 package com.deutsche.notesapp.service;
 
-import com.deutsche.benchmarkstarter.annotations.Benchmark;
+import com.deutsche.benchmarkstarter.annotations.JavaBenchmark;
 import com.deutsche.notesapp.dao.NotesRepo;
 import com.deutsche.notesapp.dao.ThemesRepo;
 import com.deutsche.notesapp.model.Note;
@@ -14,7 +14,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 @Service
-@Benchmark
+@JavaBenchmark
 public class NoteViewService {
 
     private final NotesRepo notesRepo;

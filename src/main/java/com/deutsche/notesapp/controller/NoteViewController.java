@@ -1,5 +1,6 @@
 package com.deutsche.notesapp.controller;
 
+import com.deutsche.benchmarkstarter.annotations.RestBenchmark;
 import com.deutsche.notesapp.model.Note;
 import com.deutsche.notesapp.service.NoteViewService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import static com.deutsche.notesapp.dao.ThemesRepo.ALL_THEMES;
 
 @Controller
 @RequestMapping("/notes")
+@RestBenchmark
 public class NoteViewController {
 
     private final NoteViewService noteViewService;
@@ -23,6 +25,7 @@ public class NoteViewController {
     }
 
     @GetMapping
+    @RestBenchmark
     public String viewAllNotes(@RequestParam(defaultValue = ALL_THEMES) String theme, Model model) {
         noteViewService.fillModelWithNotesByTheme(theme, model);
         return "all-notes";
