@@ -1,5 +1,6 @@
 package com.deutsche.notesapp.service;
 
+import com.deutsche.notesapp.benchmarktools.annotations.Benchmark;
 import com.deutsche.notesapp.dao.NotesRepo;
 import com.deutsche.notesapp.dao.ThemesRepo;
 import com.deutsche.notesapp.model.Note;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Benchmark
 public class NoteViewService {
 
     private final NotesRepo notesRepo;
@@ -23,16 +25,13 @@ public class NoteViewService {
         this.themesRepo = themesRepo;
     }
 
-    public void fillModelWithNotes(Model model){
-        fillModelWithNotesByTheme(ThemesRepo.ALL_THEMES,model);
-    }
-
     public void fillModelWithNotesByTheme(String theme, Model model) {
         List<Note> notes = theme.equals("ALL") ? notesRepo.findAll() : notesRepo.findByThemeName(theme);
         model.addAttribute("notes", notes);
         model.addAttribute("notes_size", notes.size());
         model.addAttribute("selected_theme", theme);
         model.addAttribute("themes", themesRepo.findAll().stream().map(Theme::getName).collect(Collectors.toSet()));
+        throw new RuntimeException("HELLYEAH");
     }
 
     public void fillModelWIthNodeById(Long id, Model model) {

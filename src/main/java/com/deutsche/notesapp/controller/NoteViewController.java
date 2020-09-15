@@ -1,9 +1,6 @@
 package com.deutsche.notesapp.controller;
 
-import com.deutsche.notesapp.dao.NotesRepo;
-import com.deutsche.notesapp.dao.ThemesRepo;
 import com.deutsche.notesapp.model.Note;
-import com.deutsche.notesapp.model.Theme;
 import com.deutsche.notesapp.service.NoteViewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,9 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 import static com.deutsche.notesapp.dao.ThemesRepo.ALL_THEMES;
 
