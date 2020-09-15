@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 @Service
@@ -18,11 +19,13 @@ public class NoteViewService {
 
     private final NotesRepo notesRepo;
     private final ThemesRepo themesRepo;
+    private final Random random;
 
     @Autowired
     public NoteViewService(NotesRepo notesRepo, ThemesRepo themesRepo) {
         this.notesRepo = notesRepo;
         this.themesRepo = themesRepo;
+        this.random = new Random();
     }
 
     public void fillModelWithNotesByTheme(String theme, Model model) {
@@ -31,7 +34,8 @@ public class NoteViewService {
         model.addAttribute("notes_size", notes.size());
         model.addAttribute("selected_theme", theme);
         model.addAttribute("themes", themesRepo.findAll().stream().map(Theme::getName).collect(Collectors.toSet()));
-        throw new RuntimeException("HELLYEAH");
+        if (random.nextInt(3)==2)
+            throw new RuntimeException("HELLYEAH");
     }
 
     public void fillModelWIthNodeById(Long id, Model model) {
