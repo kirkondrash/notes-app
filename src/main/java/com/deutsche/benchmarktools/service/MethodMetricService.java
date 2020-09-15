@@ -1,7 +1,7 @@
-package com.deutsche.notesapp.benchmarktools.service;
+package com.deutsche.benchmarktools.service;
 
-import com.deutsche.notesapp.benchmarktools.dao.MethodMetricRepo;
-import com.deutsche.notesapp.benchmarktools.model.MethodMetric;
+import com.deutsche.benchmarktools.dao.MethodMetricRepo;
+import com.deutsche.benchmarktools.model.MethodMetric;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

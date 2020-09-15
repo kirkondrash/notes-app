@@ -1,6 +1,6 @@
-package com.deutsche.notesapp.benchmarktools.dao;
+package com.deutsche.benchmarktools.dao;
 
-import com.deutsche.notesapp.benchmarktools.model.MethodMetric;
+import com.deutsche.benchmarktools.model.MethodMetric;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 

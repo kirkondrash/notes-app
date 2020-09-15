@@ -1,6 +1,6 @@
 package com.deutsche.notesapp.service;
 
-import com.deutsche.notesapp.benchmarktools.annotations.Benchmark;
+import com.deutsche.benchmarktools.annotations.Benchmark;
 import com.deutsche.notesapp.dao.NotesRepo;
 import com.deutsche.notesapp.dao.ThemesRepo;
 import com.deutsche.notesapp.model.Note;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 @Service
@@ -31,7 +32,8 @@ public class NoteViewService {
         model.addAttribute("notes_size", notes.size());
         model.addAttribute("selected_theme", theme);
         model.addAttribute("themes", themesRepo.findAll().stream().map(Theme::getName).collect(Collectors.toSet()));
-        throw new RuntimeException("HELLYEAH");
+        if (new Random().nextBoolean())
+            throw new RuntimeException("HELLYEAH");
     }
 
     public void fillModelWIthNodeById(Long id, Model model) {

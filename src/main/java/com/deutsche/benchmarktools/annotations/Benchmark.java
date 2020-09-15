@@ -1,4 +1,4 @@
-package com.deutsche.notesapp.benchmarktools.annotations;
+package com.deutsche.benchmarktools.annotations;
 
 import org.springframework.stereotype.Component;
 

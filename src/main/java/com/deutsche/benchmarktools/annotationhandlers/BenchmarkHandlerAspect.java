@@ -1,8 +1,8 @@
-package com.deutsche.notesapp.benchmarktools.annotationhandlers;
+package com.deutsche.benchmarktools.annotationhandlers;
 
 
-import com.deutsche.notesapp.benchmarktools.model.MethodMetric;
-import com.deutsche.notesapp.benchmarktools.service.MethodMetricService;
+import com.deutsche.benchmarktools.model.MethodMetric;
+import com.deutsche.benchmarktools.service.MethodMetricService;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -24,10 +24,10 @@ public class BenchmarkHandlerAspect {
         this.methodMetricService = methodMetricService;
     }
 
-    @Pointcut("@annotation(com.deutsche.notesapp.benchmarktools.annotations.Benchmark))")
+    @Pointcut("@annotation(com.deutsche.benchmarktools.annotations.Benchmark))")
     public void benchmarkedMethods(){}
 
-    @Pointcut("@within(com.deutsche.notesapp.benchmarktools.annotations.Benchmark))")
+    @Pointcut("@within(com.deutsche.benchmarktools.annotations.Benchmark))")
     public void benchmarkedClasses(){}
 
     @Around("benchmarkedMethods() || benchmarkedClasses()")

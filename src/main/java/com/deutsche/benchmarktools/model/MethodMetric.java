@@ -1,4 +1,4 @@
-package com.deutsche.notesapp.benchmarktools.model;
+package com.deutsche.benchmarktools.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
