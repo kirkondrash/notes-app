@@ -45,14 +45,13 @@ public class NoteViewController {
         return "add-note";
     }
 
-    @PostMapping
+    @PostMapping("/add_note")
     public String addNote(@Validated Note note, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "add-note";
         }
         noteViewService.saveNote(note);
-        noteViewService.fillModelWithNotes(model);
-        return "all-notes";
+        return "redirect:/notes";
     }
 
     @GetMapping("/edit_note/{id}")
@@ -68,14 +67,12 @@ public class NoteViewController {
             return "edit-note";
         }
         noteViewService.saveNote(note);
-        noteViewService.fillModelWithNotes(model);
-        return "all-notes";
+        return "redirect:/notes";
     }
 
     @GetMapping("/delete_note/{id}")
     public String deleteNote(@PathVariable("id") long id, Model model) {
         noteViewService.deleteNoteById(id);
-        noteViewService.fillModelWithNotes(model);
-        return "all-notes";
+        return "redirect:/notes";
     }
 }
