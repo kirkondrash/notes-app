@@ -66,11 +66,6 @@
             <artifactId>benchmark-starter</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>com.github.pengrad</groupId>
-            <artifactId>java-telegram-bot-api</artifactId>
-            <version>4.9.0</version>
-        </dependency>
     </dependencies>
 
     <build>
