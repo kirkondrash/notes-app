@@ -35,7 +35,7 @@ public class NoteViewService {
         model.addAttribute("selected_theme", theme);
         model.addAttribute("themes", themesRepo.findAll().stream().map(Theme::getName).collect(Collectors.toSet()));
         if (random.nextInt(3)==2)
-            throw new RuntimeException("HELLYEAH");
+            throw new RuntimeException("Something went wrong!");
     }
 
     public void fillModelWithNoteById(Long id, Model model) {
